@@ -1,0 +1,15 @@
+set serveroutput on;
+ACCEPT a NUMBER PROMPT 'Enter a number a: '
+ACCEPT b NUMBER PROMPT 'Enter a number b: '
+ declare
+     a integer := 15;
+     b integer := 10;
+     m integer;
+ begin
+      m := a;
+      if m<b then
+        m := b;
+      end if;
+   dbms_output.put_line('maximum value'||m);
+   end;
+   /

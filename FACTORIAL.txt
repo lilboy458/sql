@@ -1,0 +1,13 @@
+set serveroutput on;
+ACCEPT a NUMBER PROMPT 'Enter a number a: '
+declare
+  a integer := &a;
+  f integer := 1;
+begin
+  while a > 0 loop
+    f := f * a;
+    a := a - 1;
+  end loop;
+  dbms_output.put_line(chr(10) || 'factorial=' || f);
+end;
+/

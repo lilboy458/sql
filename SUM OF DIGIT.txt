@@ -1,0 +1,15 @@
+set serveroutput on;
+ACCEPT n NUMBER PROMPT 'Enter first number: '
+declare
+    n integer := &n;
+    sum_digit integer := 0;
+    r integer;
+    begin
+    while n <> 0 loop
+    r := mod(n , 10);
+    sum_digit := sum_digit + r;
+    n := (n / 10);
+    end loop;
+    dbms_output.put_line('sum of digits = '||sum_digit);
+   end;
+    /

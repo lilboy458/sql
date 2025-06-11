@@ -1,0 +1,12 @@
+    set serveroutput on;
+    ACCEPT m NUMBER PROMPT 'Enter first number: '
+    declare
+    m number:=&n;
+    begin
+    if m>=45 then
+    dbms_output.put_line(chr(10)||'Pass');
+    else
+    dbms_output.put_line(chr(10)||'Fail');
+    end if;
+    end;
+   /

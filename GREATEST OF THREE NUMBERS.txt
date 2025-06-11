@@ -1,0 +1,22 @@
+set serveroutput on;
+ACCEPT a NUMBER PROMPT 'Enter a number a: '
+ACCEPT b NUMBER PROMPT 'Enter a number b: '
+ACCEPT c NUMBER PROMPT 'Enter a number c: '
+declare
+  a integer := &a;
+  b integer := &b;
+  c integer := &c;
+  g integer;
+begin
+  g := a;
+  if g < b then
+    g := b;
+  end if;
+
+  if g < c then
+    g := c;
+  end if;
+
+  dbms_output.put_line('greatest=' || g);
+end;
+/

@@ -1,0 +1,17 @@
+set serveroutput on;
+  declare
+   a integer:=0;
+   b integer:=1;
+   c integer;
+   n integer:=10;
+   begin
+   dbms_output.put_line(a);
+   dbms_output.put_line(b);
+   for i in 3..10 loop
+   c:=a+b;
+   a:=b;
+   b:=c;
+   dbms_output.put_line(c);
+   end loop;
+   end;
+    /

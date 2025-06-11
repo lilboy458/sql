@@ -1,0 +1,12 @@
+set serveroutput on;
+Accept a number prompt ' enter num: '
+declare
+    a integer := &a;
+    m integer;
+    begin
+       for i in 1..10 loop
+        m := a * i;
+      dbms_output.put_line(a||'x'||i||'='||m);
+      end loop;
+    end;
+   /

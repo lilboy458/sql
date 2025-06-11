@@ -1,0 +1,18 @@
+SET SERVEROUTPUT ON;
+
+ACCEPT str CHAR PROMPT 'Enter a string: '
+
+DECLARE
+  org_str VARCHAR2(100) := '&str';
+  rev_str VARCHAR2(100) := '';
+  len INTEGER;
+BEGIN
+  len := LENGTH(org_str);
+  
+  FOR i IN REVERSE 1..len LOOP
+    rev_str := rev_str || SUBSTR(org_str, i, 1);
+  END LOOP;
+  
+  DBMS_OUTPUT.PUT_LINE('Reversed string: ' || rev_str);
+END;
+/

@@ -1,0 +1,15 @@
+ set serveroutput on;
+ declare
+    marks number:=88;
+    grade char(1);
+    begin
+    grade:= case
+    when marks>=90 then 'A'
+    when marks>=75 then 'B'
+    when marks>=60 then 'C'
+    when marks>=40 then 'D'
+   else 'F'
+   end;
+   dbms_output.put_line(chr(10)||'Grade='||grade);
+   end;
+   /

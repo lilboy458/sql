@@ -1,0 +1,10 @@
+set serveroutput on;
+
+declare
+  num integer := &num;
+  s integer;
+begin
+  s := num * num;
+  dbms_output.put_line('Square of ' || num || ' = ' || s);
+end;
+/

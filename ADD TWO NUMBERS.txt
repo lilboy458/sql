@@ -1,0 +1,14 @@
+SET SERVEROUTPUT ON;
+
+ACCEPT a NUMBER PROMPT 'Enter first number: '
+ACCEPT b NUMBER PROMPT 'Enter second number: '
+
+DECLARE
+  a INTEGER := &a;
+  b INTEGER := &b;
+  c INTEGER;
+BEGIN
+  c := a + b;
+  DBMS_OUTPUT.PUT_LINE(CHR(10) || a || '+' || b || '=' || c);
+END;
+/

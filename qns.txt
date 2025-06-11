@@ -1,0 +1,263 @@
+
+-----------ODD OR EVEN----------
+
+set serveroutput on;
+ACCEPT a NUMBER PROMPT 'Enter a number a: '
+declare
+  a integer := &a;
+begin
+  if mod(a, 2) = 0 then
+    dbms_output.put_line('even');
+  else
+    dbms_output.put_line('odd');
+  end if;
+end;
+/
+
+
+
+-----------FACTORIAL----------------
+
+set serveroutput on;
+ACCEPT a NUMBER PROMPT 'Enter a number a: '
+declare
+  a integer := &a;
+  f integer := 1;
+begin
+  while a > 0 loop
+    f := f * a;
+    a := a - 1;
+  end loop;
+  dbms_output.put_line(chr(10) || 'factorial=' || f);
+end;
+/
+
+
+----------GREATEST OF THREE NUMBERS--------------
+
+set serveroutput on;
+ACCEPT a NUMBER PROMPT 'Enter a number a: '
+ACCEPT b NUMBER PROMPT 'Enter a number b: '
+ACCEPT c NUMBER PROMPT 'Enter a number c: '
+declare
+  a integer := &a;
+  b integer := &b;
+  c integer := &c;
+  g integer;
+begin
+  g := a;
+  if g < b then
+    g := b;
+  end if;
+
+  if g < c then
+    g := c;
+  end if;
+
+  dbms_output.put_line('greatest=' || g);
+end;
+/
+
+
+
+---------MAXIMUM OF TWO NUMBERS-----------
+
+set serveroutput on;
+ACCEPT a NUMBER PROMPT 'Enter a number a: '
+ACCEPT b NUMBER PROMPT 'Enter a number b: '
+ declare
+     a integer := 15;
+     b integer := 10;
+     m integer;
+ begin
+      m := a;
+      if m<b then
+        m := b;
+      end if;
+   dbms_output.put_line('maximum value'||m);
+   end;
+   /
+
+
+
+----------SQUARE OF GIVEN VALUE-----------
+
+set serveroutput on;
+
+declare
+  num integer := &num;
+  s integer;
+begin
+  s := num * num;
+  dbms_output.put_line('Square of ' || num || ' = ' || s);
+end;
+/
+
+------------SWITCH---------------------
+
+ set serveroutput on;
+ declare
+    marks number:=88;
+    grade char(1);
+    begin
+    grade:= case
+    when marks>=90 then 'A'
+    when marks>=75 then 'B'
+    when marks>=60 then 'C'
+    when marks>=40 then 'D'
+   else 'F'
+   end;
+   dbms_output.put_line(chr(10)||'Grade='||grade);
+   end;
+   /
+
+
+
+---------------MULTIPLICATION-----------------
+
+set serveroutput on;
+Accept a number prompt ' enter num: '
+declare
+    a integer := &a;
+    m integer;
+    begin
+       for i in 1..10 loop
+        m := a * i;
+      dbms_output.put_line(a||'x'||i||'='||m);
+      end loop;
+    end;
+   /
+
+---------REV STRING------------------
+
+SET SERVEROUTPUT ON;
+
+ACCEPT str CHAR PROMPT 'Enter a string: '
+
+DECLARE
+  org_str VARCHAR2(100) := '&str';
+  rev_str VARCHAR2(100) := '';
+  len INTEGER;
+BEGIN
+  len := LENGTH(org_str);
+  
+  FOR i IN REVERSE 1..len LOOP
+    rev_str := rev_str || SUBSTR(org_str, i, 1);
+  END LOOP;
+  
+  DBMS_OUTPUT.PUT_LINE('Reversed string: ' || rev_str);
+END;
+/
+
+
+------Add two numbers------------
+SET SERVEROUTPUT ON;
+
+ACCEPT a NUMBER PROMPT 'Enter first number: '
+ACCEPT b NUMBER PROMPT 'Enter second number: '
+
+DECLARE
+  a INTEGER := &a;
+  b INTEGER := &b;
+  c INTEGER;
+BEGIN
+  c := a + b;
+  DBMS_OUTPUT.PUT_LINE(CHR(10) || a || '+' || b || '=' || c);
+END;
+/
+
+-----sum of digits----------
+ set serveroutput on;
+ACCEPT n NUMBER PROMPT 'Enter first number: '
+declare
+    n integer := &n;
+    sum_digit integer := 0;
+    r integer;
+    begin
+    while n <> 0 loop
+    r := mod(n , 10);
+    sum_digit := sum_digit + r;
+    n := (n / 10);
+    end loop;
+    dbms_output.put_line('sum of digits = '||sum_digit);
+   end;
+    /
+
+
+---------fibonacci----------
+
+  set serveroutput on;
+  declare
+   a integer:=0;
+   b integer:=1;
+   c integer;
+   n integer:=10;
+   begin
+   dbms_output.put_line(a);
+   dbms_output.put_line(b);
+   for i in 3..10 loop
+   c:=a+b;
+   a:=b;
+   b:=c;
+   dbms_output.put_line(c);
+   end loop;
+   end;
+    /
+
+-------Reverse of number------------
+
+set serveroutput on;
+ACCEPT n NUMBER PROMPT 'Enter first number: '
+
+declare
+  n integer := &n;
+  rev integer := 0;
+  begin
+  while n > 0 loop
+  rev := rev * 10 + mod(n,10);
+  n:=trunc(n/10);
+  end loop;
+  dbms_output.put_line(rev);
+  end;
+   /
+
+---------if else-------------
+    set serveroutput on;
+    ACCEPT m NUMBER PROMPT 'Enter first number: '
+    declare
+    m number:=&n;
+    begin
+    if m>=45 then
+    dbms_output.put_line(chr(10)||'Pass');
+    else
+    dbms_output.put_line(chr(10)||'Fail');
+    end if;
+    end;
+   /
+
+-------------prime or not------------------
+
+ set serveroutput on;
+    ACCEPT n NUMBER PROMPT 'Enter first number: '
+    declare
+    n number:=&n;
+    temp number:=1;
+    begin
+    if n<=1 then
+    temp:=0;
+    end if;
+    for i in 2..floor(n/2) loop
+    if mod(n,i)=0 then
+   temp:=0;
+   exit;
+   end if;
+   end loop;
+   if temp=1 then
+   dbms_output.put_line(n||' is prime');
+   else
+   dbms_output.put_line(n||' is not prime');
+   end if;
+   end;
+   /
+
+
